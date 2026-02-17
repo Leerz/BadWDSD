@@ -139,7 +139,28 @@ Keep all wire short as much as you can, **GND** is the most important one. and a
 When done properly, success rate should be 100%.
 
 # Pin description
+<details>
+  <summary><b>PIN / GPIO MAPPING</b></summary>
+<p>
 
+| Signal | RP2040-Zero | Pico | Type | Function |
+|--------|:-----------:|:----:|------|----------|
+| **HOLD** | **GPIO 2** | **GPIO 2** | Config (GND) | Disable modchip without unsoldering |
+| **BANKSEL** | **GPIO 14** | **GPIO 28** | Config (GND) | Force OFW (syscon `w 1224 00`) |
+| LITE | GPIO 3 | GPIO 14 | Config (GND) | TODO |
+| CLK | GPIO 6 | GPIO 6 | Signal | XDR CLK |
+| CLK2 | GPIO 7 | GPIO 7 | Signal | XDR CLK (secondary) |
+| CMD | GPIO 10 | GPIO 10 | Signal | XDR CMD |
+| CMD2 | GPIO 9 | GPIO 11 | Signal | XDR CMD (secondary) |
+| SC_RX | GPIO 13 | GPIO 17 | Signal | Syscon UART RX |
+| SC_TX | GPIO 12 | GPIO 16 | Signal | Syscon UART TX |
+| DEBUG_RX | GPIO 5 | GPIO 5 | Debug | UART RX (baud 576000) |
+| DEBUG_TX | GPIO 4 | GPIO 4 | Debug | UART TX (baud 576000) |
+| LED | GPIO 16 | GPIO 25 | Status | LED (WS2812 on Zero) |
+| TRISTATE | GPIO 21 | GPIO 21 | Signal | Tristate control |
+
+</p>
+</details>
 **SIGNAL PIN:**
 
 **CLK** - XDR CLK signal
